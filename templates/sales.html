@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales - Warehouse Accounting System</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .header {
+            margin: 0px 0px;
+            padding: 0;
+            background-color: #1a0c0c;
+            color: #fff;
+            text-align: center;
+        }
+        .navbar1 {
+            color: chartreuse;
+            font-size: 40px;
+        }
+
+        /* Styling for the Navbar */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: center;
+            display: inline;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.right {
+            float: center;
+        }
+
+        /* Container for the main content */
+        .container {
+            flex: 1;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Footer styling */
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* Error message styling */
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Adding space between form labels and inputs */
+        .form-item {
+            margin-bottom: 15px;
+        }
+
+        .form-item label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+<!-- Navbar section -->
+<div class="navbar">
+    <div class="navbar1">
+        <p>Warehouse Accounting System</p>
+    </div>
+   
+    <a href="/" class="right">Home</a>
+    <a href="/balance">Balance</a>
+    <a href="/sales">Sales</a>
+    <a href="/purchase">Purchase</a>
+    <a href="/history">History</a>
+</div>
+
+<!-- Main content section -->
+<div class="container">
+    <div class="Sales">
+        <h1>Sales</h1>
+    </div>
+    {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        <div class="form-item">
+            <label for="item_name">Item Name:</label>
+            <input type="text" name="item_name" id="item_name" required>
+        </div>
+        <div class="form-item">
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" step="0.01" required>
+        </div>
+        <div class="form-item">
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- Footer section -->
+<footer>
+    <p>&copy; 2024 Warehouse Accounting System</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* Navigation bar styles */
+nav {
+    float: left;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* Home button */
+.home-button {
+    float: right;
+    margin-top: 20px;
+}
+
+.home-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.home-button a:hover {
+    background-color: #0779e4;
+}
+
+/* Table styles */
+.item-table {
+    margin-top: 30px;
+}
+
+.item-table h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tbody tr:hover {
+    background-color: #f2f2f2;
+}
