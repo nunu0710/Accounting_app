@@ -63,6 +63,13 @@
             overflow: hidden;
         }
 
+        /* Right-aligned bold text for balance */
+        .balance-amount {
+            font-weight: bold;
+            text-align: right;
+            margin-right: 20px;
+        }
+
         /* Footer styling */
         footer {
             padding: 20px;
@@ -72,6 +79,25 @@
             text-align: center;
             position: relative;
             bottom: 0;
+        }
+
+        /* Form styling */
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-right: 10px;
+        }
+
+        .form-group select, .form-group input {
+            flex: 1;
+        }
+
+        form > button {
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -92,20 +118,22 @@
 
 <!-- Main content section -->
 <div class="container">
-    <div class = "Balance">
+    <div class="Balance">
         <h1>Balance</h1>
-        </div>
-    <p>Current Balance: {{ balance }} Euro</p>
+    </div>
+    <p class="balance-amount">Current Balance: <span>{{ balance }}</span> Euro</p>
     <form method="post">
-        <label for="command">Command:</label>
-        <select name="command" id="command">
-            <option value="add">Add</option>
-            <option value="subtract">Subtract</option>
-        </select>
-        <br>
-        <label for="amount">Amount:</label>
-        <input type="number" name="amount" id="amount" required>
-        <br>
+        <div class="form-group">
+            <label for="command">Command:</label>
+            <select name="command" id="command">
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" id="amount" required>
+        </div>
         <button type="submit">Submit</button>
     </form>
 </div>
