@@ -53,22 +53,8 @@ def balance():
         amount = request.form.get('amount', type=int, default=0)
         if command == 'add':
             account_balance += amount
-            purchase_history.append({
-                'item': 'balance',
-                'price': 0,
-                'quantity': 0,
-                'total': amount,
-                'time': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            })
         elif command == 'subtract':
             account_balance -= amount
-            purchase_history.append({
-                'item': 'balance',
-                'price': 0,
-                'quantity': 0,
-                'total': -amount,
-                'time': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            })
         save_data()  # Save data after each balance update
     return render_template('balance.html', balance=account_balance)
 
@@ -140,8 +126,7 @@ def purchase():
 def transaction_history():
     return render_template('history.html', 
                            sales_history=sales_history, 
-                           purchase_history=purchase_history,
-                           balance=account_balance)
+                           purchase_history=purchase_history)
 
 if __name__ == '__main__':
     app.run(debug=True)
